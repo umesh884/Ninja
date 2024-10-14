@@ -1,0 +1,60 @@
+import random
+import sys
+Given_pin = input("First Generate your 4 digit pin: ")
+process = True
+Given_pin1 = int(Given_pin)
+Amount = 20000
+print("Welcome to home page")
+Insert = input("Insert your card: \n Y for yes \n Q for quit \n ")
+while(Insert.lower()=="y"):
+    print(("\n Menu"))
+    choice = input("\n 1.Checking balance \n 2.Cash withdrawal \n 3.Fast Cash \n")
+    choice1 = int(choice)
+    """if choice1 < 1 or choice > 3:
+        print("Please Enter number from 1 ato 3")
+        sys.exit()"""
+    if choice1 in (1,2,3):
+        if choice1 == 1:
+            print("Your current Account Balance: ",Amount)
+            print("Please take your mini statement")
+        elif choice1 == 2:
+            print("Enter Your 4 digit pin")
+            pin = input("Enter: ")
+            if (pin == Given_pin):
+                print("How much amount you want to withdraw: ")
+                withd = int(input("Enter amount: "))
+                Amount -= withd
+                print("You have withdrawn cash: ",withd)
+                print("Please take your cash")
+                print("Your current Balance is: ",Amount)
+                #save = input("\n 1. From current \n 2. From savings \n")
+            else:
+                print("Please Enter Correct pin")
+        elif choice1 == 3:
+            pin = input("Enter 4 digit pin: ")
+            draw = input("\n 1. 10000 \n 2. 5000 \n 3.2000 \n 4.1000 \n")
+            draw1 = int(draw)
+            if (pin == Given_pin):
+                
+                print("How much amount you want to withdraw: ")
+                if draw1 == 1:
+                
+                    Amount -= 10000
+                elif draw1 == 2:
+                
+                    Amount -= 5000
+                elif draw1 == 3:
+                
+                    Amount -= 2000
+                elif draw1 == 4:
+                
+                    Amount -= 1000
+               # print("You have withdrawn cash: ",withd)
+                print("Please take your cash")
+                print("Your current Balance is: ",Amount)
+            else:
+                print("Please enter correct pin")
+            
+                #save = input("\n 1. From current \n 2. From savings \n")
+            
+            
